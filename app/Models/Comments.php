@@ -9,9 +9,9 @@ class Comments extends Model
 {
     use HasFactory;
 
-    public function Users()
+    public function User()
     {
-        return $this->belongsTo(Users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function Cards()

@@ -2,8 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Users;
-use http\Client\Curl\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +18,7 @@ class BoardsFactory extends Factory
     public function definition()
     {
         return [
-            'author_id' => Users::factory(),
+            'author_id' => User::factory(),
             'title' => $this->faker->name()
         ];
     }

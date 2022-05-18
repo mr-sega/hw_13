@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Columns;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,8 +20,8 @@ class CardsFactory extends Factory
     {
         return [
             'column_id' => Columns::factory(),
-            'author_id' => Users::factory(),
-            'executor_id' => Users::factory(),
+            'author_id' => User::factory(),
+            'executor_id' => User::factory(),
             'title' => $this->faker->title,
             'description' => $this->faker->text
         ];

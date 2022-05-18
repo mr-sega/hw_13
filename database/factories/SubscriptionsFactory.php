@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Cards;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +20,7 @@ class SubscriptionsFactory extends Factory
     {
         return [
             'card_id' => Cards::factory(),
-            'users_id' => Users::factory(),
+            'users_id' => User::factory(),
             'viewed_at' => $this->faker->dateTime
         ];
     }

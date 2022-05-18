@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Cards;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +21,7 @@ class CommentsFactory extends Factory
         return [
             'text' => $this->faker->text,
             'card_id' => Cards::factory(),
-            'users_id' => Users::factory()
+            'users_id' => User::factory()
         ];
     }
 }
