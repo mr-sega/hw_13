@@ -9,6 +9,11 @@ class Cards extends Model
 {
     use HasFactory;
 
+    public function author()
+    {
+        return $this->hasOne(User::class, 'author_id');
+    }
+
     public function columns()
     {
         return $this->belongsTo(Columns::class);
