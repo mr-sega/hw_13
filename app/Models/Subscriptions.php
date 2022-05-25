@@ -14,8 +14,8 @@ class Subscriptions extends Model
         return $this->belongsTo(Cards::class);
     }
 
-    public function Notifications()
+    public function notifications()
     {
-        return $this->belongsTo(Notifications::class);
+        return $this->belongsToMany(Notifications::class, 'notification_subscription', 'notification_id', 'subscription_id');
     }
 }

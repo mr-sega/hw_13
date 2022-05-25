@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreign('author_id')->references('id')->on('users');
         });
 
-        Schema::create('board_user', function (Blueprint $table) {
+        Schema::create('boards_user', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('boards_id');
@@ -41,12 +41,12 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('board_user', function (Blueprint $table){
+        Schema::table('boards_user', function (Blueprint $table){
             $table->dropForeign('boards_id');
             $table->dropForeign('users_id');
         });
 
-        Schema::dropIfExists('board_user');
+        Schema::dropIfExists('boards_user');
 
         Schema::dropIfExists('boards');
     }

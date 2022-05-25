@@ -24,4 +24,9 @@ class Cards extends Model
         return $this->hasMany(Subscriptions::class);
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notifications::class);
+    }
+
 }

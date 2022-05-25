@@ -11,11 +11,11 @@ class Comments extends Model
 
     public function User()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 
     public function Cards()
     {
-        return $this->belongsTo(Cards::class);
+        return $this->hasOne(Cards::class, 'id', 'card_id');
     }
 }

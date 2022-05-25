@@ -26,7 +26,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('notification_id');
             $table->foreignId('subscription_id');
-            $table->dateTime('viewied_at');
+            $table->timestamp('viewied_at')->nullable();
             $table->timestamps();
 
             $table->foreign('notification_id')->references('id')->on('notifications');

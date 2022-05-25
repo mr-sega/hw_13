@@ -57,8 +57,13 @@ class User extends Authenticatable
         return $this->hasMany(Subscriptions::class);
     }
 
+    public function author()
+    {
+        return $this->hasMany(Boards::class, 'author_id');
+    }
+
     public function boards()
     {
-        return $this->hasMany(Boards::class);
+        return $this->belongsToMany(User::class, 'boards_user', 'users_id', 'boards_id');
     }
 }

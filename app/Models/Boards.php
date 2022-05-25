@@ -11,7 +11,12 @@ class Boards extends Model
 
     public function User()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class, 'boards_user', 'boards_id', 'users_id');
+    }
+
+    public function author()
+    {
+        return $this->hasOne(User::class, 'author_id');
     }
 
     public function Columns()
